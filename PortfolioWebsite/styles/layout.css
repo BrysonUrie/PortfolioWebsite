@@ -1,0 +1,253 @@
+/* Fonts */
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat/static/Montserrat-Black.ttf) format('truetype'); 
+    font-weight: bold;
+}
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat/static/Montserrat-BoldItalic.ttf);
+    font-style: italic;
+    font-weight: bold;
+}
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+
+/* Keyframes */
+@keyframes generalIntro {
+    from {
+        transform: translateX(0%);
+        opacity: 90%;
+    }
+    to {
+        transform: translateX(200%);
+        opacity: 0%;
+    }
+}
+@keyframes weberIntro {
+    from {
+        opacity: 71%;
+        font-style: italic;
+    }
+    to {
+        opacity: 0%;
+
+    }
+}
+@keyframes navActive {
+    from {
+        
+    }
+    to {
+        color: rgba(226, 226, 226, 1);
+        font-size: 1.1em;
+        font-weight: bold;
+        text-shadow: 2px 1px 1px rgb(77, 77, 175);
+    }
+}
+@keyframes navInactive {
+    from {
+        color: rgba(226, 226, 226, 1);
+        font-size: 1.1em;
+        font-weight: bold;
+        text-shadow: 2px 1px 1px rgb(77, 77, 175);
+    }
+    to {
+    }
+}
+@keyframes projectImgActive {
+    from {
+
+    }
+    to {
+        transform: translateX(-5px) translateY(-5px) translateZ(10px);
+        filter: grayscale(100%) drop-shadow(5px 3px 7px rgb(1, 1, 116));
+    }
+}
+@keyframes projectImgInactive {
+    from {
+        transform: translateX(-5px) translateY(-5px) translateZ(10px);
+        filter: grayscale(100%) drop-shadow(5px 3px 7px rgb(1, 1, 116));
+    }
+    to {
+
+    }
+}
+
+/* General Page Styles */ 
+html {
+    background-color: rgb(1, 1, 36);
+    color: rgba(226, 226, 226, 0.716);
+    margin-top: 0px;
+    font-family: montserrat, 'Times New Roman', Times, serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+html * {
+    border: 1px solid rd;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* General Nav Styles */
+#generalNav {
+    align-self: flex-start;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1em;
+    background-color: rgb(0, 0, 30);
+    height: 30px;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+#generalNav a {
+    margin: 0px 10px;
+    color: rgba(226, 226, 226, 0.242);
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#generalNav a:hover, #generalNav a:active{
+    animation-name: navActive;
+    animation-duration: 100ms;    
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#generalNav a:not(:hover) {
+    animation-name: navInactive;
+    animation-duration: 500ms;    
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* General Header Styles */
+#generalHeader {
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-bottom: 100px ;
+    font-size: 1em;
+    margin-top: 20px;
+    border-left: 3px solid rgb(36, 0, 36);
+    border-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) ,
+        rgba(226, 226, 226, 0.716) 30%, 
+        rgba(0, 0, 0, 0)) 1 100%;
+}
+#generalHeader * {
+    line-height: 30px;
+    animation-name: generalIntro;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+    opacity: 0%;
+}
+#generalHeader h1 {
+    font-size: 1.5em;
+    transform: translateX(30px);
+}
+#generalHeader h2 {
+    font-size: 1.5em;
+    animation-delay: 500ms;
+}
+#generalHeader p {
+
+    font-size: .8em;
+    margin-top: 20px;
+    animation-delay: 1500ms;
+}
+
+#weber {
+    display: inline;
+    color: rgb(143, 1, 143);
+    animation-name: weberIntro;
+    animation-duration: 5s;
+
+}
+#weber a {
+    text-decoration: none;
+}
+
+
+#intro {
+    padding-top: 100px;
+    height: 500px;
+    background-color: rgb(0, 0, 50);
+    background: linear-gradient(rgb(0, 0, 36), rgb(0, 0, 50) 10%);
+}
+.project {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.projectText {
+    flex-basis: 11;
+    width: 40%;
+    padding: 20px;
+}
+.projectName {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.projectDesc * {
+    font-size: 1.1em;
+    height: 200px;
+    margin-top: 20px;
+    padding-left: 20px;
+
+    overflow-y: scroll;
+    border-left: 3px solid #240024;
+    border-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) ,
+        rgba(226, 226, 226, 0.716) 5%, 
+        rgba(0, 0, 0, 0)) 1 100%;
+}
+.projectImg {
+    perspective: 500px;
+    display: flex;
+    flex-basis: 1;
+    padding: 20px;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+
+}
+.projectImg img {
+    width: 77%;
+    filter: grayscale(100%);
+    border-radius: 10px;
+}
+.projectImg img:hover, .projectImg img:active {
+    animation-name: projectImgActive;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.projectImg img:not(:hover) {
+    animation-name: projectImgInactive;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* ADD STICK NAV BAR */ 
